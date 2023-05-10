@@ -7,7 +7,7 @@ import license from 'rollup-plugin-license';
 
 
 
-let libName = 'my-library-name';
+let libName = 'cep-symlink';
 export default defineConfig({
     build: {
         lib: {
@@ -31,7 +31,7 @@ export default defineConfig({
                     },
                 }),
             ],
-            external: ['fs', 'path', 'fs-extra', 'util', 'child_process', 'os', 'fs/promises'],
+            external: ['fs', 'path', 'fs-extra', 'util', 'child_process', 'os', 'fs/promises', '#ansi-styles', '#ansi-styles', 'inquirer', 'is-elevated'],
             output: {
                 globals: {
                     fs: 'fs',

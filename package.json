@@ -1,13 +1,14 @@
 {
-  "name": "my-library-name",
+  "name": "cep-symlink",
   "version": "1.0.0",
   "type": "module",
   "types": "./types/index.d.ts",
   "description": "",
-  "keywords": [
-
-  ],
+  "keywords": [],
   "license": "MIT",
+  "bin": {
+    "cep-symlink": "lib/index.ts"
+  },
   "repository": {
     "type": "git",
     "url": ""
@@ -18,8 +19,8 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/my-library-name.es.js",
-      "require": "./dist/my-library-name.umd.cjs"
+      "import": "./dist/cep-symlink.es.js",
+      "require": "./dist/cep-symlink.umd.cjs"
     }
   },
   "scripts": {
@@ -29,11 +30,13 @@
   },
   "devDependencies": {
     "path-browserify": "^1.0.1",
-    "vite": "^4.1.0",
-    "vite-plugin-node-polyfills": "^0.7.0",
     "rollup-plugin-license": "^3.0.1",
-    "rollup-plugin-polyfill-node": "^0.12.0"
+    "rollup-plugin-polyfill-node": "^0.12.0",
+    "vite": "^4.1.0",
+    "vite-plugin-node-polyfills": "^0.7.0"
   },
   "dependencies": {
+    "inquirer": "^9.2.2",
+    "is-elevated": "^4.0.0"
   }
 }
