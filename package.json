@@ -1,0 +1,39 @@
+{
+  "name": "my-library-name",
+  "version": "1.0.0",
+  "type": "module",
+  "types": "./types/index.d.ts",
+  "description": "",
+  "keywords": [
+
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/my-library-name.es.js",
+      "require": "./dist/my-library-name.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "path-browserify": "^1.0.1",
+    "vite": "^4.1.0",
+    "vite-plugin-node-polyfills": "^0.7.0",
+    "rollup-plugin-license": "^3.0.1",
+    "rollup-plugin-polyfill-node": "^0.12.0"
+  },
+  "dependencies": {
+  }
+}
