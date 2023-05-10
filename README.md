@@ -26,3 +26,12 @@ The terminal will prompt you to choose your next step:
   ```
 
 The options to `open` and `remove` will only show up once you have created a symlink.
+
+<br>
+
+## Where is the symlink being created?
+Mac: `CURRENT_USER/Library/Application Support/Adobe/CEP/extensions`
+
+Windows: `C:/Users/CURRENT_USER/AppData/Roaming/Adobe/CEP/extensions`
+
+

@@ -1,6 +1,6 @@
 {
   "name": "cep-symlink",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "types": "./types/index.d.ts",
   "description": "A simple command-line tool to create, remove or manage a symlink of your extension in the Adobe CEP extensions folder. Lets you develop your extension in a folder of your choice, as well as test your build before publishing.",
