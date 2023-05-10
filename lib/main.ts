@@ -14,10 +14,10 @@ let activeName = path.basename(activeSrc) || "";
 
 // inquirer options (adopts to existing symlink)
 let choices: Choices = {
-    open: `Open existing symlink in ${isMac ? 'Finder' : 'Explorer'}}`,
     symlinkProject: `Symlink "${paths.projectName}" (start developing)`,
     symlinkDist: `Symlink "${paths.distFolderName}" (test your build)`,
-    remove: `Remove symlink "${activeName}"`,
+    open: `Open existing symlink (${activeName}) in ${isMac ? 'Finder' : 'Explorer'}`,
+    remove: `Remove symlink (${activeName})`,
     exit: `Exit`
 };
 if (!activeExists) {
@@ -57,10 +57,12 @@ async function ask() {
             let target = paths.target;
             switch (answers.chooseAction) {
 
-                case choices.symlinkProject || choices.symlinkDist:
+                case choices.symlinkProject:
+                case choices.symlinkDist:
                     let src = answers.chooseAction === choices.symlinkProject ? paths.projectFolder : paths.distFolder;
                     try {
                         symlink.link(src, target);
+                        console.log(`Symlink created! Don't forget to relaunch your Adobe app.`)
                     } catch (e) {
                         console.log(`\nERROR: \n${e.message} \n`);
                     }
@@ -69,13 +71,14 @@ async function ask() {
                 case choices.remove:
                     try {
                         symlink.unlink(paths.target);
+                        console.log(`Symlink removed.`);
                     } catch (e) {
                         console.log(`\nERROR: \n${e.message} \n`);
                     }
                     break;
 
                 case choices.open:
-                    symlink.openFolder(activeSrc);
+                    symlink.openFolder(target);
                     break;
 
 
