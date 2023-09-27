@@ -1,7 +1,7 @@
 # CEP-symlink
 A simple command-line tool to create, remove or manage a symlink of your extension in the Adobe CEP extensions folder. Lets you develop your extension in a folder of your choice, as well as test your build before publishing.
 # Install
-1. Install: `npm i cep-symlink`
+1. Install: `npm i -D cep-symlink`
 2. In you package.json add a script: 
 
 ```json
